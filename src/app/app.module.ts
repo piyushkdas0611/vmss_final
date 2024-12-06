@@ -12,13 +12,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddVehicleInsuranceComponent } from './add-vehicle-insurance/add-vehicle-insurance.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { UpdatepasswordService } from './services/updatepassword.service';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InsuranceHistoryComponent,
     AddVehicleInsuranceComponent,
-    UpdatepasswordComponent // Declare components here
+    UpdatepasswordComponent,
+    NavBarComponent,
+    FooterComponent // Declare components here
   ],
   imports: [
     BrowserModule,

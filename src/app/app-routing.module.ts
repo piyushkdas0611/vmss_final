@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   { path: 'updatepassword', component: UpdatepasswordComponent },
   { path: 'underwriter', component: UnderwriterComponent},
-  {path: 'home',component:HomeComponent},
+  {path: '',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'admin',component:AdminComponent},
   {path:'register-under-writer',component:RegisterUnderWriterComponent},

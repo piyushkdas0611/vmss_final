@@ -5,6 +5,12 @@ import { AddVehicleInsuranceComponent } from './add-vehicle-insurance/add-vehicl
 import { InsuranceHistoryComponent } from './insurance-history/insurance-history.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { UnderwriterComponent } from './underwriter/underwriter.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegisterUnderWriterComponent } from './register-under-writer/register-under-writer.component';
+import { DeleteComponent } from './delete/delete.component';
+import { SuccessComponent } from './success/success.component';
 
 const routes: Routes = [
   { path: 'add-insurance', component: AddVehicleInsuranceComponent },
@@ -15,6 +21,12 @@ const routes: Routes = [
   },
   { path: 'updatepassword', component: UpdatepasswordComponent },
   { path: 'underwriter', component: UnderwriterComponent},
+  {path: 'home',component:HomeComponent},
+  {path:'login',component:LoginComponent},
+  {path:'admin',component:AdminComponent},
+  {path:'register-under-writer',component:RegisterUnderWriterComponent},
+  {path:'delete',component:DeleteComponent},
+  {path:'success',component:SuccessComponent}
   // { path: '', redirectTo: '/insurance-history', pathMatch: 'full' }
 ];
 

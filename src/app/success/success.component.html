@@ -1,0 +1,15 @@
+
+<div id="success-page">
+    
+  
+    <div class="form-group">
+      <p><strong>Name:</strong> {{ underwriter.name }}</p>
+      <p><strong>Date of Birth:</strong> {{ underwriter.dob }}</p>
+      <p><strong>Gender:</strong> {{ underwriter.gender }}</p>
+      <p><strong>Address:</strong> {{ underwriter.address }}</p>
+      <p><strong>Joining Date:</strong> {{ underwriter.doj }}</p>
+    </div>
+  
+    <button (click)="exportToPDF()">Download PDF</button>
+  </div>
+  

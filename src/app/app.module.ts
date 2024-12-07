@@ -13,6 +13,12 @@ import { UpdatepasswordService } from './services/updatepassword.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { RegisterUnderWriterComponent } from './register-under-writer/register-under-writer.component';
+import { DeleteComponent } from './delete/delete.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +27,13 @@ import { CommonModule } from '@angular/common';
     AddVehicleInsuranceComponent,
     UpdatepasswordComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    LoginComponent,
+    AdminComponent,
+    RegisterUnderWriterComponent,
+    DeleteComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
 import { UpdatepasswordService } from './services/updatepassword.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
     AddVehicleInsuranceComponent,
     UpdatepasswordComponent,
     NavBarComponent,
-    FooterComponent,
-    AboutUsComponent // Declare components here
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule, // Import Angular modules here

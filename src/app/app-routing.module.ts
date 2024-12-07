@@ -5,7 +5,6 @@ import { AddVehicleInsuranceComponent } from './add-vehicle-insurance/add-vehicl
 import { InsuranceHistoryComponent } from './insurance-history/insurance-history.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { UnderwriterComponent } from './underwriter/underwriter.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: 'add-insurance', component: AddVehicleInsuranceComponent },
@@ -16,7 +15,6 @@ const routes: Routes = [
   },
   { path: 'updatepassword', component: UpdatepasswordComponent },
   { path: 'underwriter', component: UnderwriterComponent},
-  {path: 'about-us', component: AboutUsComponent}
   // { path: '', redirectTo: '/insurance-history', pathMatch: 'full' }
 ];
 

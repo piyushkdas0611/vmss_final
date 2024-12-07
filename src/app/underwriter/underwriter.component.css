@@ -25,4 +25,10 @@ html, body {
     background-position: center;
     background-size: cover;
   }
+  .custom-font {
+    font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  }
   

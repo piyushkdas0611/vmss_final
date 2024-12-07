@@ -9,5 +9,5 @@ import { Router } from '@angular/router';
   styleUrl: './underwriter.component.css'
 })
 export class UnderwriterComponent {
-
+  constructor(private router:Router) {}
 }

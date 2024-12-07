@@ -1,7 +1,31 @@
 <!-- Header -->
 <header class="flex-none">
   <nav [class.bg-black]="isBlackNavBar" class="flex items-center justify-between p-6 lg:px-8 z-10" aria-label="Global">
-    <div class="flex lg:flex-1 z-10">
+    <!-- Back Button -->
+    <div class="lg:flex lg:flex-1 z-10">
+      <button 
+        *ngIf="showBackButton" 
+        (click)="goBack()" 
+        class="flex items-center text-white hover:text-gray-300 transition-colors duration-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="text-sm font-semibold">Back</span>
+      </button>
+      
+      <!-- Logo (moved to center when back button is present) -->
+      <a *ngIf="!showBackButton" href="#" class="-m-1.2 p-1.2">
+        <strong>
+          <h1 class="text-lg/8 font-semibold text-white">
+            V-SURE
+          </h1>
+        </strong>
+      </a>
+    </div>
+
+    <!-- Logo (for pages without back button) -->
+    <div *ngIf="showBackButton" class="flex lg:flex-1 justify-center z-10">
       <a href="#" class="-m-1.2 p-1.2">
         <strong>
           <h1 class="text-lg/8 font-semibold text-white">
@@ -10,16 +34,15 @@
         </strong>
       </a>
     </div>
+
     <div class="flex gap-x-12 z-10">
       <a *ngIf="isAdminNavBar" routerLink="/register-underwriter" class="text-sm/6 font-semibold text-white">Add
         Underwriter</a>
       <a *ngIf="isAdminNavBar" href="#" class="text-sm/6 font-semibold text-white">Delete Underwriter</a>
       <a *ngIf="isUnderwriterNavBar" routerLink="/add-insurance" class="text-sm/6 font-semibold text-white">Add
         Insurance</a>
-      <a *ngIf="isUnderwriterNavBar" routerLink="/insurance-history" class="text-sm/6 font-semibold text-white">Search
-        Insurance</a>
       <a *ngIf="isUnderwriterNavBar" routerLink="/insurance-history" class="text-sm/6 font-semibold text-white">View
-        Insurance History</a>
+        Insurance</a>
       <a *ngIf="isUnderwriterNavBar" routerLink="/updatepassword" class="text-sm/6 font-semibold text-white">Update
         Password</a>
     </div>

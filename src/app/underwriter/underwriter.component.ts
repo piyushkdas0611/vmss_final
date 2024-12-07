@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-underwriter',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './underwriter.component.css'
 })
 export class UnderwriterComponent {
-
+  constructor(private router:Router) {}
 }

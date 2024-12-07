@@ -12,6 +12,7 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
 import { UpdatepasswordService } from './services/updatepassword.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,16 @@ import { FooterComponent } from './footer/footer.component';
     AddVehicleInsuranceComponent,
     UpdatepasswordComponent,
     NavBarComponent,
-    FooterComponent // Declare components here
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule // Import Angular modules here
+    HttpClientModule, // Import Angular modules here
+    RouterModule
   ],
   providers: [UserService, UpdatepasswordService],
   bootstrap: [AppComponent]

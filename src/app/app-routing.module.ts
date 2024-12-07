@@ -14,7 +14,7 @@ const routes: Routes = [
     component: InsuranceHistoryComponent
   },
   { path: 'updatepassword', component: UpdatepasswordComponent },
-  { path: 'underwriter', component: UnderwriterComponent}
+  { path: 'underwriter', component: UnderwriterComponent},
   // { path: '', redirectTo: '/insurance-history', pathMatch: 'full' }
 ];
 

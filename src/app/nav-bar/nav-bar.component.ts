@@ -11,16 +11,22 @@ export class NavBarComponent {
   isBlackNavBar: boolean = false;
   isAdminNavBar: boolean = false;
   isUnderwriterNavBar: boolean = false;
+  isHomePage: boolean = true;
+
   constructor(private router: Router) {
-    this.router.events.subscribe((event)=>{
-      if(event instanceof NavigationEnd) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
         this.setNavbarClass();
       }
     });
   }
+
   setNavbarClass(): void {
+    // Check if the current route is home page
+    this.isHomePage = this.router.url === '/';
+
     const excludedRoutes = ['/', '/admin', '/underwriter'];
-    
+
     // Set isBlackNavBar to true if the current route is not excluded
     this.isBlackNavBar = !excludedRoutes.includes(this.router.url);
 
@@ -29,6 +35,7 @@ export class NavBarComponent {
     this.isUnderwriterNavBar = this.router.url === '/underwriter';
 
     console.log('Current URL:', this.router.url);
+    console.log('isHomePage:', this.isHomePage);
     console.log('isBlackNavBar:', this.isBlackNavBar);
     console.log('isAdminNavBar:', this.isAdminNavBar);
     console.log('isUnderwriterNavBar:', this.isUnderwriterNavBar);

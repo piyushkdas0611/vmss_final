@@ -1,28 +1,63 @@
 /* Ensure the page layout fills the entire viewport */
-html, body {
-    height: 100%;
-    margin: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.bg-img {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* Full height of viewport */
+}
+
+main {
+  flex-grow: 1;
+  /* Push the footer to the bottom */
+}
+
+footer {
+  background: transparent;
+  /* Dark gray */
+  padding: 1rem 0;
+  color: white;
+}
+
+.background {
+  background-image: url(../../resources/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Fade-in Animation for Elements */
+.fade-in {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly below */
+  animation: fadeIn 1s ease-out forwards; /* Fade-in effect */
+}
+
+/* Animation delay for consecutive elements */
+.fade-in:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.fade-in:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.fade-in:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Return to original position */
   }
-  
-  .bg-img {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Full height of viewport */
-  }
-  
-  main {
-    flex-grow: 1; /* Push the footer to the bottom */
-  }
-  
-  footer {
-    background:transparent; /* Dark gray */
-    padding: 1rem 0;
-    color: white;
-  }
-  .background {
-    background-image: url(../../resources/bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  
+}

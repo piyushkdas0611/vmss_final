@@ -11,6 +11,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RegisterUnderWriterComponent } from './register-under-writer/register-under-writer.component';
 import { DeleteComponent } from './delete/delete.component';
 import { SuccessComponent } from './success/success.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'add-insurance', component: AddVehicleInsuranceComponent },
@@ -20,13 +21,14 @@ const routes: Routes = [
     component: InsuranceHistoryComponent
   },
   { path: 'updatepassword', component: UpdatepasswordComponent },
-  { path: 'underwriter', component: UnderwriterComponent},
+  { path: 'underwriter', component: UnderwriterComponent, canActivate: [AuthGuard]},
   {path: '',component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'admin',component:AdminComponent},
+  {path:'admin',component:AdminComponent, canActivate:[AuthGuard]},
   {path:'register-under-writer',component:RegisterUnderWriterComponent},
   {path:'delete',component:DeleteComponent},
-  {path:'success',component:SuccessComponent}
+  {path:'success',component:SuccessComponent},
+  { path: '**', redirectTo: '/login' }
   // { path: '', redirectTo: '/insurance-history', pathMatch: 'full' }
 ];
 

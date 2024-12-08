@@ -22,6 +22,10 @@ export class NavBarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    const role = sessionStorage.getItem('role');
+  if (role !== 'admin') {
+    this.router.navigate(['/login']);
+  }
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.currentUrl = this.router.url;
@@ -32,7 +36,7 @@ export class NavBarComponent implements OnInit {
 
   setNavbarClass(): void {
     // Check if the current route is home page
-    this.isHomePage = this.currentUrl === '/';
+    this.isHomePage = !sessionStorage.getItem('role');
 
     const excludedRoutes = ['/', '/admin', '/underwriter'];
 
@@ -55,6 +59,16 @@ export class NavBarComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    if(this.router.url == '/login'){
+      this.router.navigate(['/']);
+    }
+    else {
+      this.location.back();
+    }
+  }
+  logout() {
+    sessionStorage.clear();
+  this.isHomePage = true;
+  this.router.navigate(['/login'], { replaceUrl: true });
   }
 }

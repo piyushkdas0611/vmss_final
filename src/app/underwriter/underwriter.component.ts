@@ -10,4 +10,10 @@ import { Router } from '@angular/router';
 })
 export class UnderwriterComponent {
   constructor(private router:Router) {}
+  ngOnInit(): void {
+    const role = sessionStorage.getItem('role');
+    if (role !== 'underwriter') {
+      this.router.navigate(['/login']); // Redirect unauthorized users
+    }
+  }
 }

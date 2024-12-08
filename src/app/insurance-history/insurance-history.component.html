@@ -1,0 +1,34 @@
+<div class="insurance-history-container">
+  <!-- Search Section -->
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchTerm" (input)="searchInsurances()" placeholder="Search by Vehicle Number"
+      class="w-full border border-gray-800 rounded-lg p-4 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+    <button *ngIf="searchTerm" (click)="clearSearch()" class="clear-search-btn bg-red-600 text-white py-1.5 px-3 rounded-md text-sm hover:bg-red-700">
+      Clear
+    </button>
+  </div>
+
+  <!-- Insurances Grid -->
+  <div class="insurances-grid">
+    <div *ngFor="let insurance of filteredInsurances"
+      [ngClass]="{'card-future': insurance.endDate > currentDate, 'card-past': insurance.endDate <= currentDate}"
+      class="insurance-card">
+      <div class="card-header">
+        <h3>{{ insurance.vehicleNumber }}</h3>
+      </div>
+      <div class="card-body">
+        <p><strong>Insurance Number:</strong> {{ insurance.id }} </p>
+        <p><strong>Make:</strong> {{ insurance.make }} </p>
+        <p><strong>Model:</strong> {{ insurance.model }}</p>
+        <p><strong>Start Date:</strong> {{ insurance.startDate | date:'mediumDate' }}</p>
+        <p><strong>End Date:</strong> {{ insurance.endDate | date:'mediumDate' }}</p>
+        <p><strong>Premium:</strong> ${{ insurance.premium | number:'1.2-2' }}</p>
+      </div>
+    </div>
+
+    <!-- No Results Message -->
+    <div *ngIf="filteredInsurances.length === 0" class="no-results">
+      <span class="text-red-500">No insurance records found.</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+    <h2 class="text-2xl font-bold text-black mb-6 text-center">
+      Delete Underwriter
+    </h2>
+  
+    <div class="form-group">
+      <label for="underWriterId">Underwriter ID:</label>
+      <input
+        id="underWriterId"
+        type="text"
+        [(ngModel)]="underWriterId"
+        placeholder="Enter Underwriter ID"
+        class="input-field"
+      />
+      <!-- Error message -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+    </div>
+    <div *ngIf="check">
+      Name:{{user.name}}<br>
+      id:{{user.id}}<br>
+      <button (click)="onSearch()" class="delete-button">Delete</button>
+    </div><br>
+  
+    <div class="button-group">
+      <button (click)="onSearch1()" class="delete-button">Search</button>
+      <button (click)="onBack()" class="back-button">Back</button>
+    </div>
+  </div>
+  

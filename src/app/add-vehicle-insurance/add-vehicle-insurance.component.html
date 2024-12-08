@@ -1,0 +1,115 @@
+<div class="flex flex-col justify-center items-center mx-auto p-8 max-w-sm bg-white rounded-md mt-8" style="box-shadow: 0 4px 8px rgba(0,0,0,0.7);">
+  <h2 class="text-xl font-semibold mb-3 text-gray-800">Add Vehicle Insurance</h2>
+  <form [formGroup]="insuranceForm" (ngSubmit)="onSubmit()" class="w-full space-y-3">
+    <!-- Vehicle Number -->
+    <div class="flex flex-col">
+      <label for="vehicleNo" class="mb-1 text-sm font-medium text-gray-700">Vehicle Number</label>
+      <input
+        id="vehicleNo"
+        type="text"
+        formControlName="vehicleNo"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('vehicleNo')?.touched && insuranceForm.get('vehicleNo')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        Vehicle Number is required.
+      </div>
+    </div>
+
+    <!-- Make -->
+    <div class="flex flex-col">
+      <label for="make" class="mb-1 text-sm font-medium text-gray-700">Make</label>
+      <input
+        id="make"
+        type="text"
+        formControlName="make"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('make')?.touched && insuranceForm.get('make')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        Make is required.
+      </div>
+    </div>
+
+    <!-- Model -->
+    <div class="flex flex-col">
+      <label for="model" class="mb-1 text-sm font-medium text-gray-700">Model</label>
+      <input
+        id="model"
+        type="text"
+        formControlName="model"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('model')?.touched && insuranceForm.get('model')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        Model is required.
+      </div>
+    </div>
+
+    <!-- Start Date -->
+    <div class="flex flex-col">
+      <label for="startDate" class="mb-1 text-sm font-medium text-gray-700">Start Date</label>
+      <input
+        id="startDate"
+        type="date"
+        formControlName="startDate"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('startDate')?.touched && insuranceForm.get('startDate')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        Start Date is required.
+      </div>
+    </div>
+
+    <!-- End Date -->
+    <div class="flex flex-col">
+      <label for="endDate" class="mb-1 text-sm font-medium text-gray-700">End Date</label>
+      <input
+        id="endDate"
+        type="date"
+        formControlName="endDate"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('endDate')?.touched && insuranceForm.get('endDate')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        End Date is required.
+      </div>
+    </div>
+
+    <!-- Premium Amount -->
+    <div class="flex flex-col">
+      <label for="premiumAmount" class="mb-1 text-sm font-medium text-gray-700">Premium Amount</label>
+      <input
+        id="premiumAmount"
+        type="number"
+        formControlName="premiumAmount"
+        class="border rounded-md p-1 text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+      />
+      <div
+        *ngIf="insuranceForm.get('premiumAmount')?.touched && insuranceForm.get('premiumAmount')?.invalid"
+        class="text-xs text-red-500 mt-1"
+      >
+        Premium Amount is required and must be a number.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      [disabled]="insuranceForm.invalid"
+      class="w-full bg-indigo-600 text-white py-1.5 px-3 rounded-md text-sm hover:bg-indigo-700 disabled:opacity-50"
+    >
+      Add Insurance
+    </button>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+/* Reset margins and paddings for body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  header {
+    background: linear-gradient(90deg, #4CAF50, #2e7d32); /* Gradient for style */
+    color: white;
+    padding: 15px 0; /* Ensure vertical padding but no gaps */
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000;
+  }
+  
+  /* Footer */
+  footer {
+    background: linear-gradient(90deg, #0c0c0c, #121312); /* Reverse gradient for consistency */
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* No gap padding */
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow for style */
+    z-index: 1000;
+  }
+  
+  /* Remove gaps between header, footer, and content */
+  main {
+    margin-top: 40px; /* Adjust to header height */
+    margin-bottom: 30px; /* Adjust to footer height */
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background for contrast */
+    box-sizing: border-box;
+    min-height: calc(100vh - 100px); /* Ensure the content fills the screen */
+  }
+  

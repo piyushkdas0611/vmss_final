@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-underwriter',
@@ -9,11 +8,5 @@ import { Router } from '@angular/router';
   styleUrl: './underwriter.component.css'
 })
 export class UnderwriterComponent {
-  constructor(private router:Router) {}
-  ngOnInit(): void {
-    const role = sessionStorage.getItem('role');
-    if (role !== 'underwriter') {
-      this.router.navigate(['/login']); // Redirect unauthorized users
-    }
-  }
+  name:string |null=sessionStorage.getItem("name")
 }

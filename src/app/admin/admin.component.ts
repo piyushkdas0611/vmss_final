@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.css'
 })
 export class AdminComponent {
-
   name:string |null=sessionStorage.getItem("name")
-
 }

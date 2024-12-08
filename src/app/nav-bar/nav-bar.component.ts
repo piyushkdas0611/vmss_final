@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent implements OnInit {
+  imgname= "assets/logo.png";
   isBlackNavBar: boolean = false;
   isAdminNavBar: boolean = false;
   isUnderwriterNavBar: boolean = false;

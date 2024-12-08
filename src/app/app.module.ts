@@ -12,7 +12,7 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
 import { UpdatepasswordService } from './services/updatepassword.service';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
@@ -42,7 +42,8 @@ import { SuccessComponent } from './success/success.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule, // Import Angular modules here
-    RouterModule
+    RouterModule,
+    NgOptimizedImage
   ],
   providers: [UserService, UpdatepasswordService],
   bootstrap: [AppComponent]
